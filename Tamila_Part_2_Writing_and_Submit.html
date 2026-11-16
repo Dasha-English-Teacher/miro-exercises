@@ -1,0 +1,172 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Tamila · Part 2 — Combine the Ideas</title><style>
+:root{--bg:#102e26;--panel:#1c473b;--card:#f7f4e9;--mint:#b9d5ae;--ink:#173b30;--muted:#d1ddd1;--accent:#e4c98c}*{box-sizing:border-box}body{margin:0;background:linear-gradient(135deg,#102e26,#173f35);font-family:Arial,sans-serif;color:var(--card)}main{max-width:1060px;margin:auto;padding:42px 24px 75px}h1{font:700 clamp(32px,5vw,55px) Georgia,serif;margin:8px 0}h2{font:700 31px Georgia,serif;margin:48px 0 14px;color:#f4eed8}.intro{font-size:16px;line-height:1.6;color:var(--muted);max-width:850px}.pill{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:9px 13px;background:#346a54;border-radius:20px;color:#fff}.card{background:var(--card);color:var(--ink);border-radius:16px;margin:15px 0;padding:21px 25px;box-shadow:0 8px 25px #071a1630;line-height:1.6}.topic{color:#587767;font-size:12px;font-weight:bold;letter-spacing:.07em;text-transform:uppercase}.sentence{font-size:18px;margin:12px 0}.pair{font-size:17px;margin:10px 0}select,textarea{font:inherit;background:white;border:1.5px solid #a3b5a9;border-radius:8px;color:#14382c}select{padding:8px 10px;margin:0 3px;max-width:100%}textarea{width:100%;min-height:85px;padding:12px;resize:vertical;margin-top:12px}.hint{font-size:14px;color:#6f5840;margin-top:6px}.feedback{font-size:14px;font-weight:600;margin-top:8px;min-height:18px}.correct{color:#23764c}.incorrect{color:#a64834}.controls{display:flex;gap:10px;flex-wrap:wrap;margin-top:17px}button{background:#d5b777;color:#17382b;border:0;border-radius:10px;padding:12px 17px;font-size:14px;font-weight:bold;cursor:pointer}button.secondary{background:#356b54;color:white}button:hover{filter:brightness(1.09)}.key{border-left:4px solid #b48c45;background:#edf0df;padding:12px;margin-top:12px;border-radius:7px;display:none;line-height:1.55}.key.show{display:block}.small{font-size:14px;color:#c1d9cb}footer{padding-top:35px;font-size:13px;color:#bbd1c1}@media(max-width:640px){main{padding:26px 13px}.card{padding:17px}.sentence{font-size:16px}select{display:block;margin:9px 0}}@media print{body{background:white;color:black}.card{box-shadow:none;border:1px solid #bbb}button{display:none}h2,.intro{color:black}}
+
+:root{--card:#fcfaf1}main{max-width:980px}.header-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}.brand{font-size:13px;color:#bad9c1;letter-spacing:.03em;font-weight:700}h1{max-width:700px;line-height:1.06}.intro{font-size:16px}.progress-wrap{background:#254d40;border:1px solid #3b6f59;padding:18px 22px;border-radius:16px;margin:28px 0 14px}.progress-head{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:14px;font-weight:bold;color:#e2eadb}.progress-track{margin-top:11px;width:100%;height:9px;border-radius:99px;background:#12362e;overflow:hidden}.progress-fill{width:0;height:100%;background:#d5b777;transition:width .25s}.topic{letter-spacing:.09em}.qhead{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}.qstatus{font-size:12px;color:#71867b}.qstatus.done{color:#2e7d56;font-weight:700}.premise{display:block;margin-bottom:8px}.premise:last-child{margin-bottom:0;font-weight:600}.pair{margin:14px 0;line-height:1.55}.answerlabel{display:block;font-size:13px;text-transform:uppercase;letter-spacing:.07em;color:#5b7468;font-weight:700}.card textarea{background:white;border:1.5px solid #b8c7b9;min-height:105px;line-height:1.55}.card textarea:focus{outline:2px solid #d5b777;border-color:#608a72}.card.empty{border:2px solid #d08c67}.submitbox{border-radius:20px;background:#eaf0e5;color:#193b2f;padding:25px;margin-top:38px;box-shadow:0 8px 25px #071a1630}.submitbox h2{color:#193b2f;margin:0 0 10px}.submitbox p{line-height:1.6}.submitbox label{display:block;font-weight:700;margin:12px 0 7px}.submitbox input[type=text]{border-radius:10px;width:min(100%,450px);border:1.5px solid #a3b5a9;padding:12px 13px;font:inherit;color:#173b30;background:white}.consent{display:flex!important;align-items:flex-start;gap:10px;font-weight:normal!important;font-size:14px;line-height:1.5;margin:19px 0!important}.consent input{margin-top:5px;accent-color:#23694e}.action{display:flex;gap:11px;flex-wrap:wrap;align-items:center;margin-top:22px}.action button{padding:14px 18px}.action button:disabled{opacity:.65;cursor:wait}.send-btn{background:#1d5f48;color:#fff}.down-btn{background:#d6ba81;color:#203b30}.send-message{margin:16px 0 0;padding:13px 15px;background:#f8f8eb;border-radius:10px;font-size:14px;display:none;line-height:1.5}.send-message.show{display:block}.send-message.good{background:#d7e9d6;color:#255d38}.send-message.warn{background:#fff1d6;color:#77531e}.notice{font-size:13px;color:#63756c;margin-top:16px}.status-good{color:#1d633d}.action-note{font-size:13px;color:#406151;margin-top:8px}.meta-row{display:flex;flex-wrap:wrap;gap:10px;margin:19px 0}.chip{border:1px solid #58806c;background:#245344;border-radius:99px;padding:7px 12px;font-size:13px}.top-links a{display:inline-block;color:#cfe2ca;margin-top:19px;font-size:14px}footer{margin-top:35px;line-height:1.6}@media(max-width:650px){main{padding:23px 14px 45px}.card{padding:19px 16px}.submitbox{padding:20px 16px}.pair{font-size:16px}.action button{width:100%}.progress-wrap{padding:14px 17px}}@media print{.submitbox,.progress-wrap,.top-links{display:none}body{color:black}.card textarea{min-height:85px}}
+</style></head><body><main><div class="header-row"><span class="pill">C1 · Part 2 / 2</span><span class="brand">@Dasha_kim.eng</span></div><h1>Combine the Ideas</h1><p class="intro">Rewrite the two ideas naturally using the grammar structure in parentheses. Use vocabulary from our lessons on friendship, burnout, impostor syndrome, and slow living. More than one answer may be correct.</p><div class="meta-row"><span class="chip">16 open-ended answers</span><span class="chip">American English</span><span class="chip">Your teacher will review your writing</span></div><div class="progress-wrap"><div class="progress-head"><span>Your progress</span><span id="count">0 / 16 completed</span></div><div class="progress-track" aria-label="completion progress"><div id="bar" class="progress-fill"></div></div></div><h2>Write your own sentences</h2><p class="small">Write your answers below. Your draft is saved in this browser as you type. There are no automatic model answers in this part; your teacher will give you individual feedback.</p><article class="card" id="question-1">
+        <div class="qhead"><span class="topic">01 / Friendship</span><span class="qstatus" id="status-1">Not written yet</span></div>
+        <div class="pair"><span class="premise">Emma and her childhood friend have very different lives now. They still make an effort to stay close.</span><span class="premise">(even though)</span></div>
+        <label for="rw1" class="answerlabel">Your sentence</label>
+        <textarea id="rw1" name="answer_01" placeholder="Combine the ideas in your own words..." rows="3" autocomplete="off" spellcheck="true" aria-label="Answer to question 1"></textarea>
+    </article><article class="card" id="question-2">
+        <div class="qhead"><span class="topic">02 / Friendship</span><span class="qstatus" id="status-2">Not written yet</span></div>
+        <div class="pair"><span class="premise">Nathan has a huge social circle. He has no one he feels comfortable confiding in.</span><span class="premise">(despite)</span></div>
+        <label for="rw2" class="answerlabel">Your sentence</label>
+        <textarea id="rw2" name="answer_02" placeholder="Combine the ideas in your own words..." rows="3" autocomplete="off" spellcheck="true" aria-label="Answer to question 2"></textarea>
+    </article><article class="card" id="question-3">
+        <div class="qhead"><span class="topic">03 / Friendship</span><span class="qstatus" id="status-3">Not written yet</span></div>
+        <div class="pair"><span class="premise">Olivia values consistency. Her friend is often flaky.</span><span class="premise">(whereas)</span></div>
+        <label for="rw3" class="answerlabel">Your sentence</label>
+        <textarea id="rw3" name="answer_03" placeholder="Combine the ideas in your own words..." rows="3" autocomplete="off" spellcheck="true" aria-label="Answer to question 3"></textarea>
+    </article><article class="card" id="question-4">
+        <div class="qhead"><span class="topic">04 / Friendship</span><span class="qstatus" id="status-4">Not written yet</span></div>
+        <div class="pair"><span class="premise">They shared more difficult experiences. Their friendship became stronger.</span><span class="premise">(the more …, the …)</span></div>
+        <label for="rw4" class="answerlabel">Your sentence</label>
+        <textarea id="rw4" name="answer_04" placeholder="Combine the ideas in your own words..." rows="3" autocomplete="off" spellcheck="true" aria-label="Answer to question 4"></textarea>
+    </article><article class="card" id="question-5">
+        <div class="qhead"><span class="topic">05 / Burnout</span><span class="qstatus" id="status-5">Not written yet</span></div>
+        <div class="pair"><span class="premise">She was completely exhausted. She kept working late to meet everyone’s expectations.</span><span class="premise">(in spite of)</span></div>
+        <label for="rw5" class="answerlabel">Your sentence</label>
+        <textarea id="rw5" name="answer_05" placeholder="Combine the ideas in your own words..." rows="3" autocomplete="off" spellcheck="true" aria-label="Answer to question 5"></textarea>
+    </article><article class="card" id="question-6">
+        <div class="qhead"><span class="topic">06 / Burnout</span><span class="qstatus" id="status-6">Not written yet</span></div>
+        <div class="pair"><span class="premise">She tried to keep all the plates spinning. She was becoming less and less effective.</span><span class="premise">(nevertheless)</span></div>
+        <label for="rw6" class="answerlabel">Your sentences</label>
+        <textarea id="rw6" name="answer_06" placeholder="Combine the ideas in your own words..." rows="3" autocomplete="off" spellcheck="true" aria-label="Answer to question 6"></textarea>
+    </article><article class="card" id="question-7">
+        <div class="qhead"><span class="topic">07 / Burnout</span><span class="qstatus" id="status-7">Not written yet</span></div>
+        <div class="pair"><span class="premise">Her workload increased. She found it harder to switch off.</span><span class="premise">(the more …, the …)</span></div>
+        <label for="rw7" class="answerlabel">Your sentence</label>
+        <textarea id="rw7" name="answer_07" placeholder="Combine the ideas in your own words..." rows="3" autocomplete="off" spellcheck="true" aria-label="Answer to question 7"></textarea>
+    </article><article class="card" id="question-8">
+        <div class="qhead"><span class="topic">08 / Burnout</span><span class="qstatus" id="status-8">Not written yet</span></div>
+        <div class="pair"><span class="premise">She started monotasking. Her work became less overwhelming.</span><span class="premise">(comparative + than)</span></div>
+        <label for="rw8" class="answerlabel">Your sentence</label>
+        <textarea id="rw8" name="answer_08" placeholder="Combine the ideas in your own words..." rows="3" autocomplete="off" spellcheck="true" aria-label="Answer to question 8"></textarea>
+    </article><article class="card" id="question-9">
+        <div class="qhead"><span class="topic">09 / Impostor syndrome</span><span class="qstatus" id="status-9">Not written yet</span></div>
+        <div class="pair"><span class="premise">She received a promotion she had worked hard for. She still felt like a fraud.</span><span class="premise">(although)</span></div>
+        <label for="rw9" class="answerlabel">Your sentence</label>
+        <textarea id="rw9" name="answer_09" placeholder="Combine the ideas in your own words..." rows="3" autocomplete="off" spellcheck="true" aria-label="Answer to question 9"></textarea>
+    </article><article class="card" id="question-10">
+        <div class="qhead"><span class="topic">10 / Impostor syndrome</span><span class="qstatus" id="status-10">Not written yet</span></div>
+        <div class="pair"><span class="premise">She had prepared thoroughly for the presentation. One unwarranted comment still made her doubt herself.</span><span class="premise">(despite the fact that)</span></div>
+        <label for="rw10" class="answerlabel">Your sentence</label>
+        <textarea id="rw10" name="answer_10" placeholder="Combine the ideas in your own words..." rows="3" autocomplete="off" spellcheck="true" aria-label="Answer to question 10"></textarea>
+    </article><article class="card" id="question-11">
+        <div class="qhead"><span class="topic">11 / Impostor syndrome</span><span class="qstatus" id="status-11">Not written yet</span></div>
+        <div class="pair"><span class="premise">Her achievements kept growing. Her self-doubt kept growing too.</span><span class="premise">(more and more)</span></div>
+        <label for="rw11" class="answerlabel">Your sentence</label>
+        <textarea id="rw11" name="answer_11" placeholder="Combine the ideas in your own words..." rows="3" autocomplete="off" spellcheck="true" aria-label="Answer to question 11"></textarea>
+    </article><article class="card" id="question-12">
+        <div class="qhead"><span class="topic">12 / Impostor syndrome</span><span class="qstatus" id="status-12">Not written yet</span></div>
+        <div class="pair"><span class="premise">One colleague brushed off the unwarranted criticism. Another took it personally.</span><span class="premise">(while)</span></div>
+        <label for="rw12" class="answerlabel">Your sentence</label>
+        <textarea id="rw12" name="answer_12" placeholder="Combine the ideas in your own words..." rows="3" autocomplete="off" spellcheck="true" aria-label="Answer to question 12"></textarea>
+    </article><article class="card" id="question-13">
+        <div class="qhead"><span class="topic">13 / Slow living</span><span class="qstatus" id="status-13">Not written yet</span></div>
+        <div class="pair"><span class="premise">She has fewer commitments now. She feels less pressure to be productive every minute.</span><span class="premise">(the fewer …, the …)</span></div>
+        <label for="rw13" class="answerlabel">Your sentence</label>
+        <textarea id="rw13" name="answer_13" placeholder="Combine the ideas in your own words..." rows="3" autocomplete="off" spellcheck="true" aria-label="Answer to question 13"></textarea>
+    </article><article class="card" id="question-14">
+        <div class="qhead"><span class="topic">14 / Slow living</span><span class="qstatus" id="status-14">Not written yet</span></div>
+        <div class="pair"><span class="premise">A slower lifestyle appeals to her. She worries that she might fall behind professionally.</span><span class="premise">(though)</span></div>
+        <label for="rw14" class="answerlabel">Your sentence</label>
+        <textarea id="rw14" name="answer_14" placeholder="Combine the ideas in your own words..." rows="3" autocomplete="off" spellcheck="true" aria-label="Answer to question 14"></textarea>
+    </article><article class="card" id="question-15">
+        <div class="qhead"><span class="topic">15 / Slow living</span><span class="qstatus" id="status-15">Not written yet</span></div>
+        <div class="pair"><span class="premise">Her evenings are less packed now. They are not completely free of obligations.</span><span class="premise">(not as … as)</span></div>
+        <label for="rw15" class="answerlabel">Your sentence</label>
+        <textarea id="rw15" name="answer_15" placeholder="Combine the ideas in your own words..." rows="3" autocomplete="off" spellcheck="true" aria-label="Answer to question 15"></textarea>
+    </article><article class="card" id="question-16">
+        <div class="qhead"><span class="topic">16 / Friendship + burnout</span><span class="qstatus" id="status-16">Not written yet</span></div>
+        <div class="pair"><span class="premise">She had a strong support system. She still struggled to open up when she was running on empty.</span><span class="premise">(although)</span></div>
+        <label for="rw16" class="answerlabel">Your sentence</label>
+        <textarea id="rw16" name="answer_16" placeholder="Combine the ideas in your own words..." rows="3" autocomplete="off" spellcheck="true" aria-label="Answer to question 16"></textarea>
+    </article><section class="submitbox" id="submit-section"><h2>Finished? Send your work</h2><p>When all 16 answers are ready, send them to your teacher for feedback. The email will contain <strong>your full sentences</strong>, not just a score.</p><label for="studentName">Your name</label><input type="text" id="studentName" value="Tamila" placeholder="Your name" maxlength="80" autocomplete="name"/><label class="consent" for="consent"><input type="checkbox" id="consent"/>I agree to share my answers with my teacher through FormSubmit, an external form submission service.</label><div class="action"><button id="send" type="button" class="send-btn">Send answers to teacher</button><button id="download" type="button" class="down-btn">Download answers (.txt)</button><button id="clear" type="button" class="secondary">Clear draft</button></div><div id="send-message" class="send-message" role="status" aria-live="polite"></div><p class="notice">Email delivery requires this page to be published online (for example on GitHub Pages) and a one-time email confirmation by the teacher. If email is unavailable, download your answers and send the file directly.</p></section><footer>@Dasha_kim.eng · C1 language practice. Your writing is saved locally in your browser until you choose to send it. Email submission is handled by FormSubmit.</footer></main><script>
+'use strict';
+const questions = [{"topic": "Friendship", "prompt": "Emma and her childhood friend have very different lives now. They still make an effort to stay close. (even though)"}, {"topic": "Friendship", "prompt": "Nathan has a huge social circle. He has no one he feels comfortable confiding in. (despite)"}, {"topic": "Friendship", "prompt": "Olivia values consistency. Her friend is often flaky. (whereas)"}, {"topic": "Friendship", "prompt": "They shared more difficult experiences. Their friendship became stronger. (the more …, the …)"}, {"topic": "Burnout", "prompt": "She was completely exhausted. She kept working late to meet everyone’s expectations. (in spite of)"}, {"topic": "Burnout", "prompt": "She tried to keep all the plates spinning. She was becoming less and less effective. (nevertheless)"}, {"topic": "Burnout", "prompt": "Her workload increased. She found it harder to switch off. (the more …, the …)"}, {"topic": "Burnout", "prompt": "She started monotasking. Her work became less overwhelming. (comparative + than)"}, {"topic": "Impostor syndrome", "prompt": "She received a promotion she had worked hard for. She still felt like a fraud. (although)"}, {"topic": "Impostor syndrome", "prompt": "She had prepared thoroughly for the presentation. One unwarranted comment still made her doubt herself. (despite the fact that)"}, {"topic": "Impostor syndrome", "prompt": "Her achievements kept growing. Her self-doubt kept growing too. (more and more)"}, {"topic": "Impostor syndrome", "prompt": "One colleague brushed off the unwarranted criticism. Another took it personally. (while)"}, {"topic": "Slow living", "prompt": "She has fewer commitments now. She feels less pressure to be productive every minute. (the fewer …, the …)"}, {"topic": "Slow living", "prompt": "A slower lifestyle appeals to her. She worries that she might fall behind professionally. (though)"}, {"topic": "Slow living", "prompt": "Her evenings are less packed now. They are not completely free of obligations. (not as … as)"}, {"topic": "Friendship + burnout", "prompt": "She had a strong support system. She still struggled to open up when she was running on empty. (although)"}];
+const storageKey = 'tamila-part2-draft-v2';
+const teacherEmail = 'dasha.kim0616@gmail.com';
+const endpoint = `https://formsubmit.co/ajax/${teacherEmail}`;
+let submitted = false;
+const $ = id => document.getElementById(id);
+function readAnswers(){return questions.map((_,idx) => $('rw'+(idx+1)).value.trim());}
+function updateProgress(){
+  const ans=readAnswers(), done=ans.filter(a=>a.length>0).length;
+  $('count').textContent=done+' / '+questions.length+' completed';
+  $('bar').style.width=(done/questions.length*100)+'%';
+  ans.forEach((a,i)=>{
+    const el=$('status-'+(i+1)); el.textContent=a ? 'Draft saved' : 'Not written yet'; el.classList.toggle('done', !!a);
+  });
+  try{localStorage.setItem(storageKey,JSON.stringify({name:$('studentName').value,answers:ans}));}catch(_){}
+}
+function buildText(){
+  const name=$('studentName').value.trim() || 'Student';
+  const data=questions.map((q,i)=>
+    `${String(i+1).padStart(2,'0')}. ${q.topic}\n${q.prompt}\nSTUDENT ANSWER:\n${$('rw'+(i+1)).value.trim() || '[Not answered]'}`);
+  return `Tamila · C1 Language Practice\nPart 2 — Combine the Ideas\nStudent: ${name}\nDate: ${new Date().toLocaleString('en-US')}\nTeacher: ${teacherEmail}\n\n${data.join('\n\n---------------------------\n\n')}`;
+}
+function downloadAnswers(){
+  const text=buildText();
+  const blob=new Blob([text], {type:'text/plain;charset=utf-8'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');a.href=url;
+  const nm=($('studentName').value||'student').replace(/[^a-z0-9_-]+/gi,'_').slice(0,32);
+  a.download=`${nm}_C1_Written_Answers.txt`;
+  document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),3000);
+}
+function message(text,kind){let e=$('send-message');e.textContent=text;e.className='send-message show '+(kind||'warn');}
+async function submitAnswers(){
+  if(submitted){message('Your submission was already accepted. You can also download a copy of your answers.','good');return;}
+  const name=$('studentName').value.trim();
+  if(!name){message('Please enter your name before sending.','warn');$('studentName').focus();return;}
+  const answers=readAnswers();let firstEmpty=answers.findIndex(a=>a.length<5);
+  document.querySelectorAll('article.card').forEach((c,i)=>c.classList.toggle('empty',answers[i].length<5));
+  if(firstEmpty>=0){message('Please finish all 16 answers (at least a few words in each) before sending.','warn');$('rw'+(firstEmpty+1)).focus();return;}
+  if(!$('consent').checked){message('Please confirm that you want to share your answers with your teacher through the submission service.','warn');$('consent').focus();return;}
+  if(location.protocol==='file:'){
+    message('Email submission is not supported directly from a downloaded local HTML file. Please open the published HTTPS version of this lesson or download your answers and send the text file to your teacher.','warn');
+    return;
+  }
+  const btn=$('send');btn.disabled=true;btn.textContent='Sending…';message('Sending your answers securely to the form service…','warn');
+  const payload={
+    _subject:`Tamila — C1 Part 2 — ${name} — written answers`,
+    _template:'table', _captcha:'false', _honey:'',
+    name, submitted_at:new Date().toISOString(),
+    lesson:'Tamila — C1 Contrast & Comparatives / Part 2',
+    message:buildText()
+  };
+  try{
+    const res=await fetch(endpoint,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)});
+    const data=await res.json();
+    if(!res.ok || (data.success!==true && data.success!=='true')){
+      throw new Error(data.message || 'The service did not confirm submission.');
+    }
+    submitted=true;
+    message('Your submission was accepted by the form service. Thank you! Your teacher can review every written answer. If the form has not been activated yet, the teacher must first confirm the activation email.','good');
+    btn.textContent='Submission accepted';
+    try{localStorage.setItem(storageKey+'-sent',new Date().toISOString())}catch(_){}
+  } catch(err){
+    message('We could not confirm email delivery. Your answers are still saved in this browser. Try again from the published website or click “Download answers” and send the file to your teacher. ('+(err.message||'Network error')+')','warn');
+    btn.disabled=false;btn.textContent='Send answers to teacher';
+  }
+}
+function clearDraft(){
+  if(!confirm('Clear all your written answers on this device?'))return;
+  questions.forEach((_,i)=>{$('rw'+(i+1)).value='';$('question-'+(i+1)).classList.remove('empty');});
+  try{localStorage.removeItem(storageKey);localStorage.removeItem(storageKey+'-sent')}catch(_){}
+  $('consent').checked=false;submitted=false;$('send').disabled=false;$('send').textContent='Send answers to teacher';
+  $('send-message').className='send-message';updateProgress();
+}
+(function init(){
+  try{const d=JSON.parse(localStorage.getItem(storageKey)||'{}');
+    if(d.name) $('studentName').value=d.name;
+    if(Array.isArray(d.answers)) d.answers.forEach((a,i)=>{if(i<questions.length)$('rw'+(i+1)).value=a||''});
+  }catch(_){}
+  document.querySelectorAll('textarea').forEach(el=>el.addEventListener('input',()=>{el.closest('.card').classList.remove('empty');updateProgress();}));
+  $('studentName').addEventListener('input',updateProgress);updateProgress();
+  $('send').addEventListener('click',submitAnswers);
+  $('download').addEventListener('click',downloadAnswers);
+  $('clear').addEventListener('click',clearDraft);
+})();
+</script></body></html>
