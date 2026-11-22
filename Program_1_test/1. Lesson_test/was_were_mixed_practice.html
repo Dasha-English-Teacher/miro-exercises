@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Was / Were — Mixed Practice | @dasha_kim.eng</title>
+<style>
+:root{--pine:#123e32;--pine2:#1f5b49;--mint:#eaf4eb;--paper:#fffefa;--sand:#f4ead9;--text:#20362e;--muted:#67766d;--line:#dce8de;--bad:#a83937;--good:#23704a;--gold:#eab96e}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(130deg,#0e342b,#1f5d4b);font-family:Arial,Helvetica,sans-serif;color:var(--text);min-height:100vh}main{max-width:970px;margin:0 auto;padding:36px 20px 64px}.hero{color:#fff;margin-bottom:22px;display:flex;justify-content:space-between;align-items:flex-end;gap:12px}.eyebrow{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#cfe8d7;font-weight:bold}.hero h1{font-size:clamp(31px,5vw,48px);line-height:1.08;margin:12px 0}.hero p{font-size:15px;color:#d7e8de;margin:4px 0;max-width:660px;line-height:1.5}.handle{white-space:nowrap;color:#e2f2e5;font-size:13px;border:1px solid #72998a;border-radius:22px;padding:8px 13px}.shell{background:var(--paper);border-radius:24px;padding:26px;box-shadow:0 12px 45px #071e184f}.howto{border-radius:15px;background:var(--mint);padding:17px 20px;line-height:1.6;font-size:15px}.howto strong{color:var(--pine)}.overview{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin:20px 0 8px}.overview h2{font-size:21px;color:var(--pine);margin:0}.count{font-size:14px;font-weight:700;color:var(--pine2)}.bar{height:10px;border-radius:20px;background:#e4ebe6;overflow:hidden;margin-bottom:14px}.bar>div{width:0%;height:100%;background:linear-gradient(90deg,#71ac7a,#2b7752);transition:width .2s}.items{display:grid;gap:12px}.item{border:1px solid var(--line);border-radius:16px;padding:18px 20px;background:white}.item.good{border-color:#a2d3ad;background:#fbfffb}.item.bad{border-color:#eab8ad;background:#fffdfc}.line{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}.sentence{font-size:18px;line-height:2.05;flex:1;min-width:240px}.number{color:var(--pine2);font-weight:800;margin-right:9px}.blank{width:148px;min-height:41px;padding:8px 11px;vertical-align:middle;background:#f9fcf8;border:2px solid #b8cdbf;border-radius:9px;font-size:17px;font-weight:600;color:var(--pine);outline:none;transition:border .15s}.blank:focus{border-color:#35805e;box-shadow:0 0 0 3px #d7ecdc}.blank.wide{width:165px}.clue{color:#667970;font-size:15px;white-space:nowrap}.actions{display:flex;gap:8px}.btn{border:0;border-radius:10px;min-width:88px;padding:12px 13px;font-weight:700;cursor:pointer;font-size:14px;transition:filter .12s,transform .12s}.btn:hover{filter:brightness(.95)}.btn:active{transform:scale(.98)}.check{background:var(--pine2);color:#fff}.show{background:#e9b565;color:#283a2d}.feedback{display:none;border-radius:11px;margin-top:12px;padding:12px 14px;font-size:14px;line-height:1.55}.feedback.visible{display:block}.feedback.ok{background:#e6f5e8;color:#145232}.feedback.err{background:#fff0e9;color:#82332b}.feedback.reveal{background:#f8efd9;color:#5f4a22}.feedback b{font-weight:800}.footer{margin-top:22px;display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap}.reset{border:1px solid #afc7b5;background:white;color:var(--pine2);border-radius:10px;padding:12px 16px;font-weight:700;cursor:pointer}.footnote{font-size:12px;color:#7a8b80}.summary{display:none;margin-top:16px;padding:15px;border-radius:12px;background:#edf7ec;color:var(--pine);font-weight:700;line-height:1.5}@media(max-width:650px){main{padding:22px 12px 40px}.shell{padding:15px}.hero{display:block}.handle{display:inline-block;margin-top:13px}.item{padding:14px}.sentence{font-size:16px}.blank{width:124px;font-size:16px}.blank.wide{width:145px}.actions{width:100%;justify-content:flex-end}.btn{min-width:102px}}
+</style>
+</head>
+<body>
+<main>
+<header class="hero"><div><div class="eyebrow">grammar practice · A1–A2</div><h1>was / were<br>mixed practice</h1><p>Утверждения, отрицания и вопросы — вперемешку. Проверь, насколько хорошо ты усвоил(а) Past Simple глагола <b>be</b>.</p></div><span class="handle">@dasha_kim.eng</span></header>
+<section class="shell">
+<div class="howto"><strong>Инструкция:</strong> заполни каждый пропуск правильной формой <b>was / were / wasn't / weren't</b>. В вопросах иногда нужно написать <b>два слова</b> (например, <i>was she</i>). Пиши строчными буквами, кроме начала предложения. Нажимай <b>Check</b>, чтобы проверить отдельный ответ. Если ошибёшься, появится объяснение на русском. Кнопка <b>Show</b> показывает правильный ответ.</div>
+<div class="overview"><h2>20 предложений</h2><span class="count" id="progress-text">Проверено правильно: 0 из 20</span></div><div class="bar" aria-hidden="true"><div id="progress-bar"></div></div>
+<div class="items" id="items"></div>
+<div class="footer"><button class="reset" id="reset">↻ Начать заново</button><span class="footnote">Ответы не отправляются и сохраняются только на этой странице.</span></div><div class="summary" id="summary">Отлично! Все 20 заданий выполнены правильно 🎉</div>
+</section>
+</main>
+<script>
+const tasks = [
+ {pre:'She',post:'(be) on the bus.',ans:'was',why:'She — третье лицо единственного числа, поэтому в прошедшем времени используем was, а не were.'},
+ {pre:'Why',post:'(they / be) late?',ans:'were they',why:'В вопросе после why сначала ставим were, затем подлежащее they: Why were they late? Для they нужна форма were.'},
+ {pre:'We',post:'(not / be) on the train.',ans:"weren't",alt:['were not'],why:'We — множественное число: were. Для отрицания добавляем not → were not или weren’t.'},
+ {pre:'',post:'(she / be) from Warsaw?',ans:'Was she',why:'В общем вопросе сначала идёт was, затем she. She — единственное число: Was she ...?'},
+ {pre:'It',post:'(be) cold.',ans:'was',why:'It — единственное число. В Past Simple глагол be имеет форму was.'},
+ {pre:'He',post:'(not / be) from Mexico.',ans:"wasn't",alt:['was not'],why:'He употребляется с was. Отрицание: was not (кратко wasn’t), а не weren’t.'},
+ {pre:'When',post:'(they / be) in London?',ans:'were they',why:'Это специальный вопрос: When + were + they. С they используем were.'},
+ {pre:'I',post:'(be) really happy then.',ans:'was',why:'С местоимением I в прошедшем времени всегда употребляется was.'},
+ {pre:'',post:'(we / be) in Madrid in March?',ans:'Were we',why:'В общем вопросе меняем порядок слов: Were + we. Для we используется were.'},
+ {pre:'The teacher',post:'(not / be) in the classroom.',ans:"wasn't",alt:['was not'],why:'The teacher — один учитель, то есть единственное число. Нужна отрицательная форма wasn’t / was not.'},
+ {pre:'How cold',post:'(it / be)?',ans:'was it',why:'В специальном вопросе после How cold используем was + it. С it не употребляем were.'},
+ {pre:'You',post:'(be) at home.',ans:'were',why:'С you всегда используется were в Past Simple — даже когда обращаемся к одному человеку.'},
+ {pre:'',post:'(he / be) a dentist?',ans:'Was he',why:'В общем вопросе сначала was, потом he. С he используется was.'},
+ {pre:'She',post:'(be) really angry.',ans:'was',why:'She — единственное число, поэтому верная форма was.'},
+ {pre:'Who',post:'(we / be) with?',ans:'were we',why:'Who + were + we + with? С we используем were и ставим его перед подлежащим.'},
+ {pre:'I',post:'(not / be) in the kitchen.',ans:"wasn't",alt:['was not'],why:'С I используем was, а в отрицании wasn’t или was not.'},
+ {pre:'He',post:'(be) Canadian.',ans:'was',why:'He — третье лицо единственного числа, поэтому используем was.'},
+ {pre:'',post:'(it / be) cold outside?',ans:'Was it',why:'Общий вопрос начинается с was, затем идёт it: Was it cold outside?'},
+ {pre:'You',post:'(not / be) pleased with the food.',ans:"weren't",alt:['were not'],why:'С you используется were. Отрицательная форма — weren’t или were not.'},
+ {pre:'Who',post:'(that woman / be)?',ans:'was that woman',why:'That woman — один человек, поэтому ставим was. Порядок слов: Who + was + that woman?'}
+];
+const list=document.getElementById('items'),statuses=Array(tasks.length).fill(false);
+function norm(s){return s.trim().toLowerCase().replace(/[’‘]/g,"'").replace(/\s+/g,' ')}
+function update(){const n=statuses.filter(Boolean).length;document.getElementById('progress-text').textContent=`Проверено правильно: ${n} из ${tasks.length}`;document.getElementById('progress-bar').style.width=(n/tasks.length*100)+'%';document.getElementById('summary').style.display=n===tasks.length?'block':'none'}
+function result(i,kind,html){const card=document.getElementById('item-'+i),f=document.getElementById('feedback-'+i);card.classList.remove('good','bad');f.className='feedback visible '+kind;f.innerHTML=html;if(kind==='ok')card.classList.add('good');if(kind==='err')card.classList.add('bad')}
+function check(i){const t=tasks[i],input=document.getElementById('input-'+i),given=norm(input.value),valid=[t.ans,...(t.alt||[])].map(norm);if(!given){statuses[i]=false;result(i,'err','✍️ Сначала впиши ответ в пропуск.');update();return}if(valid.includes(given)){statuses[i]=true;result(i,'ok','✓ Верно! <b>'+escapeHtml(t.ans)+'</b>.<br>'+t.why)}else{statuses[i]=false;let info='✗ Пока неверно. '+t.why+'<br><b>Попробуй ещё раз!</b>';result(i,'err',info)}update()}
+function show(i){const t=tasks[i],input=document.getElementById('input-'+i);input.value=t.ans;statuses[i]=false;result(i,'reveal','💡 Правильный ответ: <b>'+escapeHtml(t.ans)+'</b>.<br>'+t.why+'<br><small>Чтобы засчитать ответ, нажми Check.</small>');update()}
+function escapeHtml(s){return s.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;')}
+tasks.forEach((t,i)=>{const card=document.createElement('div');card.className='item';card.id='item-'+i;const empty=t.pre===''?true:false;card.innerHTML=`<div class="line"><div class="sentence"><span class="number">${i+1})</span>${t.pre?escapeHtml(t.pre)+' ':''}<input aria-label="Ответ к заданию ${i+1}" autocomplete="off" autocapitalize="off" spellcheck="false" id="input-${i}" class="blank ${t.ans.includes(' ')?'wide':''}" type="text"> <span class="clue">${escapeHtml(t.post)}</span></div><div class="actions"><button class="btn check" data-action="check" data-i="${i}">Check</button><button class="btn show" data-action="show" data-i="${i}">Show</button></div></div><div class="feedback" aria-live="polite" id="feedback-${i}"></div>`;list.appendChild(card);card.querySelector('input').addEventListener('keydown',ev=>{if(ev.key==='Enter')check(i)});card.querySelector('input').addEventListener('input',()=>{statuses[i]=false;card.classList.remove('good','bad');card.querySelector('.feedback').className='feedback';update()})});
+list.addEventListener('click',e=>{const b=e.target.closest('button[data-action]');if(!b)return;const i=Number(b.dataset.i);b.dataset.action==='check'?check(i):show(i)});
+document.getElementById('reset').addEventListener('click',()=>{if(!confirm('Очистить все ответы и начать заново?'))return;tasks.forEach((_,i)=>{document.getElementById('input-'+i).value='';statuses[i]=false;const card=document.getElementById('item-'+i);card.className='item';document.getElementById('feedback-'+i).className='feedback'});update();window.scrollTo({top:0,behavior:'smooth'})});
+</script>
+</body>
+</html>
