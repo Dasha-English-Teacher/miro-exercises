@@ -1,0 +1,60 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Perfect on camera · Vocabulary match</title>
+<style>
+*{box-sizing:border-box}body{margin:0;color:#173d37;font:16px/1.45 system-ui,sans-serif;min-height:100vh;background:radial-gradient(ellipse at top right,#ffac85,transparent 45%),radial-gradient(ellipse at bottom left,#bd9ce6,transparent 50%),#79d7bd;background-attachment:fixed}main{max-width:1000px;margin:auto;padding:32px 18px}header,section{border-radius:24px;padding:clamp(16px,4vw,36px)}header{position:relative;overflow:hidden;background:#10493e;color:white}header:after{content:'▶';position:absolute;right:5%;top:-32px;font-size:130px;color:#a9f9ce24;transform:rotate(14deg);pointer-events:none}h1{font:clamp(32px,6vw,60px)/1.1 Georgia,serif;margin:0}header p{margin:8px 0 0;color:#d6f7df}section{margin-top:14px;background:#fffaf4}nav{display:flex;flex-wrap:wrap;gap:6px}button{cursor:pointer;font:inherit;color:inherit;border:1px solid #b0c3b9;background:white;border-radius:12px;padding:9px 14px}button:focus-visible{outline:3px solid #7831a5;outline-offset:2px}nav [aria-current=true],.active,#next{background:#174e41;color:white}h2{font-size:22px;margin-bottom:4px}.directions{margin-top:0}.grid{display:grid;grid-template-columns:.9fr 1.2fr;gap:12px}.cards{display:grid;align-content:start;gap:7px}.cards button{text-align:left;min-height:49px;padding:10px 13px}.cards button:disabled{opacity:1;background:#e1f0e4;color:#385b43;border-color:#a6c7b0}.cards button:disabled:before{content:'✓ ';font-weight:bold}h3{margin:8px 0;font-size:15px}.wrong{background:#ffe3dc;border-color:#b43b29}footer{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:16px;flex-wrap:wrap}#msg{font-weight:650;margin:10px 0;color:#33584f}@media(max-width:540px){main{padding:10px}section{padding:13px}.grid{gap:7px}.cards button{font-size:14px;padding:8px}nav button{padding:7px 9px}}
+</style><main><header><h1>Perfect on camera</h1><p>TikTok’s “perfect” dads &amp; husbands · Vocabulary match</p></header><section><nav aria-label="Rounds" id="nav"></nav><h2>Match the expressions to their definitions</h2><p class="directions">Choose an expression on the left, then its meaning on the right. Correct pairs get a ✓. If you miss, try a different meaning.</p><div id="count"></div><div id="msg" role="status"></div><div class="grid"><div><h3>Expressions</h3><div id="words" class="cards"></div></div><div><h3>Definitions</h3><div id="defs" class="cards"></div></div></div><footer><button id="reset">Restart this round</button><button id="next" hidden>Next round →</button></footer></section></main><script>
+const source=`has a way of|tends to do something or bring about a particular result
+make it explicitly clear|state something directly so there is no room for doubt
+from the jump|from the very beginning
+elaborate meals|dishes that take considerable planning and preparation
+drastically different|unlike each other in a major way
+retention rate|the percentage of viewers who are still watching at a given point
+
+have the algorithm in the palm of his hand|have so much influence over what gets recommended that he seems to control the system
+retrofit|add new equipment or features to something already built
+rapid-fire examples|illustrations given one after another with barely a pause
+bust out his excavator|casually bring out his digging machine and put it to use
+dumbfounded|so surprised that you are momentarily at a loss for words
+inadequate|not good enough for what is needed
+flabbergasted|utterly astonished (the word begins with F)
+
+seemingly harmless|appearing unlikely to cause trouble, at least at first glance
+discontent|a feeling of dissatisfaction with the way things are
+leave a bad taste in someone’s mouth|leave someone with an unpleasant impression afterward
+hold someone to certain standards|expect a person to meet particular requirements
+caveat (verb / noun)|to qualify a statement by adding a limitation; the qualification itself
+extravaganza|a spectacular event or display, often on a grand scale
+
+blow something outside the scope of reality|as used in the video, exaggerate something until it becomes unrealistic
+write something off as a business expense|count a purchase as a deductible cost of running a business
+poke fun at himself|joke about his own habits or behavior
+money was tight|there was little cash available to spend
+pull something off|manage to do something difficult successfully
+flaunt his wealth|show off how much money he has
+
+pass the baton to someone else|hand responsibility for a task over to another person
+deployment|the act of sending military personnel to serve in a particular place
+see red|suddenly become very angry
+stay in your lane|stick to your own area of responsibility and avoid interfering
+lavish|very generous, expensive, or luxurious
+sweep someone off their feet|charm someone so strongly that they quickly fall for you
+rub someone the wrong way|irritate someone by the way you speak or act`;
+const rounds=source.split('\n\n').map(group=>group.split('\n').map(line=>line.split('|')));
+function shuffled(n){const order=Array.from({length:n},(_,i)=>i);for(let i=n-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[order[i],order[j]]=[order[j],order[i]]}if(order.every((v,i)=>v===i))order.push(order.shift());return order}
+const state=rounds.map(group=>({done:new Set(),order:shuffled(group.length)}));
+const el=id=>document.getElementById(id);
+let round=0,selected=null;
+function button(label,action){const b=document.createElement('button');b.textContent=label;b.onclick=action;return b}
+function render(message='Choose an expression.'){
+ const group=rounds[round],current=state[round];
+ el('nav').replaceChildren(...rounds.map((g,i)=>{const b=button('Round '+(i+1)+(state[i].done.size===g.length?' ✓':''),()=>{round=i;selected=null;render()});b.setAttribute('aria-current',String(i===round));return b}));
+ el('words').replaceChildren(...group.map(([term],i)=>{const b=button(term,()=>{selected=i;render('Choose the meaning of “'+term+'”.');el('defs').querySelector('button:not(:disabled)')?.focus()});b.disabled=current.done.has(i);b.classList.toggle('active',i===selected);b.setAttribute('aria-pressed',String(i===selected));return b}));
+ el('defs').replaceChildren(...current.order.map(i=>{const b=button(group[i][1],()=>{if(selected===null){el('msg').textContent='First choose an expression on the left.';return}if(i!==selected){b.classList.add('wrong');el('msg').textContent='Try again. Which meaning fits “'+group[selected][0]+'”?';return}current.done.add(i);selected=null;render('Correct! Choose another expression.')});b.disabled=current.done.has(i);return b}));
+ const total=state.reduce((sum,r)=>sum+r.done.size,0),complete=current.done.size===group.length;
+ el('count').textContent='Round '+(round+1)+' · '+current.done.size+' / '+group.length+' matched · Overall '+total+' / 32';
+ el('msg').textContent=total===32?'All 32 pairs matched. Well done!':complete?'Round complete!':message;
+ el('next').hidden=!complete||total===32;
+}
+el('next').onclick=()=>{for(let step=1;step<=rounds.length;step++){const i=(round+step)%rounds.length;if(state[i].done.size<rounds[i].length){round=i;break}}selected=null;render()};
+el('reset').onclick=()=>{state[round]={done:new Set(),order:shuffled(rounds[round].length)};selected=null;render()};
+render();
+</script></html>
