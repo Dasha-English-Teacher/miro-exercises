@@ -26,7 +26,9 @@ if (window.top === window) {
     if (invalid && !invalid.reportValidity()) return;
     const option = choices.get(decision.querySelector('[data-story-options]'));
     if (option?.dataset.standaloneDestination) {
-      location.href = option.dataset.standaloneDestination;
+      const destination = option.dataset.standaloneDestination;
+      const navigate = new CustomEvent('advent-story-navigate', { detail: destination, cancelable: true });
+      if (document.dispatchEvent(navigate)) location.href = destination;
     } else {
       status.textContent = 'The next chapter is coming soon!';
     }

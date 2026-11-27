@@ -2,3 +2,14 @@
 [data-advent-recording] .ex-actions { display: flex; flex-wrap: wrap; gap: 8px; }
 [data-advent-recording] .btn { min-height: 48px; max-width: 100%; white-space: normal; }
 [data-advent-recording] audio { width: 100%; }
+
+[data-advent-recording] [data-record-status]:empty { display: none; }
+.advent-recording-dialog {
+  width: min(28rem, calc(100% - 2rem));
+  border: 1px solid var(--rule, currentColor);
+  border-radius: .75rem;
+  padding: 1rem;
+  color: inherit;
+}
+.advent-recording-dialog .ex-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.advent-recording-dialog .btn { min-height: 48px; }
