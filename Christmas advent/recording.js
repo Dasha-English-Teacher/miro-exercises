@@ -12,6 +12,7 @@ function setupRecorder(box) {
     <div data-record-result hidden>
       <audio controls preload="none" aria-label="Play recording"></audio>
       <div class="ex-actions">
+        <button class="btn" type="button" data-record-again>Record again</button>
         <a class="btn" data-record-download download>Download</a>
         <button class="btn" type="button" data-record-share>Send via WhatsApp</button>
       </div>
@@ -35,6 +36,7 @@ function setupRecorder(box) {
     delete box.dataset.recordingActive;
     stopTracks();
     stop.hidden = true;
+    result.hidden = !file;
     record.hidden = !!file;
     record.disabled = false;
   };
@@ -66,8 +68,8 @@ function setupRecorder(box) {
     return;
   }
 
-  record.addEventListener('click', async () => {
-    if (record.disabled || file) return;
+  async function startRecording() {
+    if (record.disabled) return;
     record.disabled = true;
     box.dataset.recordingActive = '';
     status.textContent = 'Waiting for microphone access…';
@@ -110,6 +112,7 @@ function setupRecorder(box) {
       };
       recorder.start();
       record.hidden = true;
+      result.hidden = true;
       stop.hidden = false;
       stop.disabled = false;
       status.textContent = 'Recording…';
@@ -121,6 +124,25 @@ function setupRecorder(box) {
           ? 'No microphone was found. Connect a microphone and try again.'
           : 'Could not start recording. Check your microphone and try again.';
     }
+  }
+
+  record.addEventListener('click', startRecording);
+  get('[data-record-again]').addEventListener('click', () => {
+    if (!box.hasAttribute('data-recording-pending')) { startRecording(); return; }
+    const dialog = document.createElement('dialog');
+    dialog.className = 'advent-recording-dialog';
+    dialog.setAttribute('aria-label', 'Replace your recording?');
+    dialog.innerHTML = `<p>Your recording hasn’t been saved. Replace it?</p>
+      <form method="dialog" class="ex-actions">
+        <button class="btn" value="keep" autofocus>Keep recording</button>
+        <button class="btn" value="replace">Record again</button>
+      </form>`;
+    dialog.addEventListener('close', () => {
+      dialog.remove();
+      if (dialog.returnValue === 'replace') startRecording();
+    });
+    document.body.append(dialog);
+    dialog.showModal();
   });
 
   download.addEventListener('click', release);
