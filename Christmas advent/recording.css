@@ -1,0 +1,4 @@
+[data-advent-recording] [hidden] { display: none !important; }
+[data-advent-recording] .ex-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+[data-advent-recording] .btn { min-height: 48px; max-width: 100%; white-space: normal; }
+[data-advent-recording] audio { width: 100%; }
