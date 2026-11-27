@@ -22,6 +22,8 @@ if (window.top === window) {
     button.disabled = groups.some((item) => !choices.has(item));
   });
   button.addEventListener('click', () => {
+    const invalid = document.querySelector('[required]:invalid');
+    if (invalid && !invalid.reportValidity()) return;
     const option = choices.get(decision.querySelector('[data-story-options]'));
     if (option?.dataset.standaloneDestination) {
       location.href = option.dataset.standaloneDestination;
