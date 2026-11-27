@@ -1,0 +1,54 @@
+/* Christmas Advent exercises only. */
+body.advent-storybook {
+  --advent-forest: #2B5342;
+  --advent-cream: #fffaf0;
+  --advent-ivory: #fcf6e9;
+  --advent-burgundy: #803d49;
+  --advent-gold: #b39760;
+  color: #293d35;
+  background: radial-gradient(ellipse at 10% 5%, #d8e2ce85, transparent 39%),
+    radial-gradient(ellipse at 95% 45%, #eddcca85, transparent 38%), var(--advent-ivory);
+  overflow-wrap: anywhere;
+}
+.advent-storybook :is(h1,h2,h3) {
+  color: var(--advent-forest);
+  font-family: Georgia, 'Times New Roman', serif;
+  line-height: 1.24;
+}
+.advent-storybook :is(.eyebrow,.kicker,.chapter) { color: var(--advent-burgundy); }
+.advent-storybook :is(.card,.watercolor-frame) {
+  background: var(--advent-cream);
+  border: 1px solid #d9ccb5;
+  box-shadow: 0 4px 16px #573d2410;
+}
+.advent-storybook img.advent-hero {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  border: 0;
+  box-shadow: none;
+  mask-image: radial-gradient(ellipse 68% 72% at center, black 68%, transparent 100%);
+}
+.advent-storybook :is(audio,video,img,iframe) { max-width: 100%; }
+.advent-storybook :is(fieldset,.mc-options,.q,.row) { min-inline-size: 0; }
+.advent-storybook :is(textarea,input[type=text],[contenteditable=true]) {
+  box-sizing: border-box;
+  max-width: 100%;
+  padding: .75rem;
+  background: var(--advent-cream);
+  color: #263a30;
+  border: 1px solid var(--advent-gold);
+  border-radius: .65rem;
+  font-size: max(16px, 1em);
+  line-height: 1.55;
+}
+.advent-storybook textarea { width: 100%; resize: vertical; }
+.advent-storybook :is(textarea,input)::placeholder { color: #665e52; opacity: 1; }
+.advent-storybook :focus-visible { outline: 2px solid var(--advent-burgundy); outline-offset: 3px; }
+.advent-storybook .btn-primary { background: var(--advent-forest); color: white; border-color: var(--advent-forest); }
+.advent-storybook .btn { white-space: normal; overflow-wrap: anywhere; max-width: 100%; }
+@media (max-width: 480px) {
+  .advent-storybook :is(button,.btn) { min-height: 48px; }
+  .advent-storybook .ex-actions { flex-wrap: wrap; }
+}
